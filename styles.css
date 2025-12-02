@@ -266,3 +266,52 @@ footer {
         font-size: 2em;
     }
 }
+/* ESTILOS PARA SECCIÓN DE HABILIDADES */
+.skills-section {
+    background-color: var(--background-color);
+}
+
+.skills-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: 40px auto 0;
+}
+
+.skill-item {
+    background-color: var(--card-background);
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    width: 280px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.skill-item:hover {
+    transform: translateY(-5px);
+}
+
+.skill-item img {
+    /* Regla para forzar el mismo tamaño */
+    width: 60px;
+    height: 60px;
+    object-fit: contain; 
+    margin-bottom: 15px;
+}
+
+.skill-item h3 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    font-size: 1.3em;
+}
+
+/* RESPONSIVE DESIGN para la sección de habilidades */
+@media (max-width: 768px) {
+    .skill-item {
+        width: 100%;
+    }
+}
