@@ -1,0 +1,268 @@
+/* VARIABLES Y RESET BÁSICO */
+:root {
+    --primary-color: #007bff; /* Azul vibrante (como referencia UTP) */
+    --secondary-color: #343a40; /* Gris oscuro para texto */
+    --background-color: #f8f9fa; /* Fondo claro */
+    --card-background: #ffffff; /* Fondo de tarjeta blanco */
+    --font-family: 'Roboto', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    line-height: 1.6;
+    background-color: var(--background-color);
+    color: var(--secondary-color);
+    scroll-behavior: smooth; /* Desplazamiento suave */
+}
+
+/* 1. CABECERA (HERO) */
+.hero {
+    /* Usando un fondo representativo de un campus */
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1541339907198-e087566d548b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80') no-repeat center center/cover;
+    color: white;
+    padding: 100px 5%;
+    text-align: center;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.header-content h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.university {
+    font-size: 1.5em;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+.user-info span {
+    display: block;
+    font-size: 1.1em;
+    margin: 5px 0;
+    font-weight: 400;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 50px;
+    margin-top: 30px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cta-button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+/* 2. BARRA DE NAVEGACIÓN ADHESIVA */
+.sticky-nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: var(--secondary-color);
+    padding: 15px 5%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.sticky-nav ul {
+    list-style: none;
+    text-align: center;
+}
+
+.sticky-nav ul li {
+    display: inline;
+    margin: 0 25px;
+}
+
+.sticky-nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 0;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+.sticky-nav ul li a:hover {
+    color: var(--primary-color);
+    border-bottom: 3px solid var(--primary-color);
+}
+
+/* 3. SECCIONES GENERALES */
+section {
+    padding: 80px 5%;
+}
+
+section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.8em;
+    color: var(--primary-color);
+    border-bottom: 3px solid var(--primary-color);
+    display: inline-block;
+    padding-bottom: 10px;
+    width: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    position: relative;
+}
+
+/* 4. SECCIÓN DE PROYECTOS (TARJETAS) */
+.projects-section {
+    background-color: #ffffff;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.project-card {
+    background-color: var(--card-background);
+    border: 1px solid #e9ecef;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.project-card h3 {
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+    font-size: 1.5em;
+    color: var(--primary-color);
+}
+
+.tags {
+    margin: 20px 0;
+}
+
+.tags span {
+    display: inline-block;
+    background-color: #e9ecef;
+    color: #495057;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    margin-right: 8px;
+    font-weight: 500;
+}
+
+.card-link {
+    display: block;
+    text-align: center;
+    margin-top: 25px;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+    border: 2px solid var(--primary-color);
+    padding: 12px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.card-link:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* 5. SECCIÓN DE CRITERIOS */
+.criteria-section {
+    background-color: var(--background-color);
+    text-align: center;
+}
+
+.criteria-section table {
+    width: 70%;
+    margin: 30px auto;
+    border-collapse: separate;
+    border-spacing: 0;
+    background-color: var(--card-background);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.criteria-section th, .criteria-section td {
+    border: none;
+    border-bottom: 1px solid #dee2e6;
+    padding: 15px;
+    text-align: left;
+}
+
+.criteria-section th {
+    background-color: var(--primary-color);
+    color: white;
+    font-weight: 700;
+}
+.criteria-section tr:last-child td {
+    border-bottom: none;
+}
+
+.due-date {
+    margin-top: 20px;
+    font-size: 1.2em;
+    font-weight: 700;
+    color: #dc3545; /* Rojo para resaltar la fecha */
+}
+
+/* 6. FOOTER */
+footer {
+    background-color: var(--secondary-color);
+    color: white;
+    text-align: center;
+    padding: 30px 5%;
+    font-size: 0.9em;
+    border-top: 5px solid var(--primary-color);
+}
+
+/* 7. RESPONSIVE DESIGN */
+@media (max-width: 992px) {
+    .criteria-section table {
+        width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 60px 5%;
+        min-height: 50vh;
+    }
+    .header-content h1 {
+        font-size: 2em;
+    }
+    .sticky-nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+    .criteria-section table {
+        width: 100%;
+    }
+    section h2 {
+        font-size: 2em;
+    }
+}
